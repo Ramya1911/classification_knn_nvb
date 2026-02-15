@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="main-container">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+        <h2>Iris Flower Prediction</h2>
+
+        <form method="POST">
+
+            <label>Sepal Length (cm)</label>
+            <input type="number" step="any" name="SepalLengthCm" required>
+
+            <label>Sepal Width (cm)</label>
+            <input type="number" step="any" name="SepalWidthCm" required>
+
+            <label>Petal Length (cm)</label>
+            <input type="number" step="any" name="PetalLengthCm" required>
+
+            <label>Petal Width (cm)</label>
+            <input type="number" step="any" name="PetalWidthCm" required>
+
+            <div class="button-group">
+                <button type="submit" name="nvb">Gaussian Naive Bayes</button>
+                <button type="submit" name="knn">K-Nearest Neighbors</button>
+            </div>
+
+        </form>
+
+        {% if prediction %}
+        <div class="prediction-box">
+            <h3>Predicted Leaf:</h3>
+            <p>{{ prediction }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+
+        {% if train_metrics %}
+
+        <h2 class="algo-title">
+            {% if selected_algo == "nvb" %}
+                Gaussian Naive Bayes Metrics
+            {% else %}
+                K-Nearest Neighbors Metrics
+            {% endif %}
+        </h2>
+
+        <!-- TRAIN SECTION -->
+        <div class="metrics-section">
+            <h3>Train Metrics</h3>
+            <p><strong>Accuracy:</strong> {{ train_metrics.train_accuracy }}</p>
+
+            <h4>Confusion Matrix</h4>
+            <table class="matrix-table">
+                <tr>
+                    <th></th>
+                    <th>Setosa</th>
+                    <th>Versicolor</th>
+                    <th>Virginica</th>
+                </tr>
+                {% for row in train_metrics.train_confusion_matrix %}
+                <tr>
+                    <th>{{ loop.index0 + 1 }}</th>
+                    {% for val in row %}
+                    <td>{{ val }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h4>Classification Report</h4>
+            <table class="report-table">
+                <tr>
+                    <th>Class</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+
+                {% for key, val in train_metrics.train_classification_report.items() %}
+                    {% if key in ['1','2','3'] %}
+                    <tr>
+                        <td>
+                            {% if key == '1' %} Iris-setosa
+                            {% elif key == '2' %} Iris-versicolor
+                            {% else %} Iris-virginica
+                            {% endif %}
+                        </td>
+                        <td>{{ "%.2f"|format(val.precision) }}</td>
+                        <td>{{ "%.2f"|format(val.recall) }}</td>
+                        <td>{{ "%.2f"|format(val['f1-score']) }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+
+        <!-- TEST SECTION -->
+        <div class="metrics-section">
+            <h3>Test Metrics</h3>
+            <p><strong>Accuracy:</strong> {{ test_metrics.test_accuracy }}</p>
+
+            <h4>Confusion Matrix</h4>
+            <table class="matrix-table">
+                <tr>
+                    <th></th>
+                    <th>Setosa</th>
+                    <th>Versicolor</th>
+                    <th>Virginica</th>
+                </tr>
+                {% for row in test_metrics.test_confusion_matrix %}
+                <tr>
+                    <th>{{ loop.index0 + 1 }}</th>
+                    {% for val in row %}
+                    <td>{{ val }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+
+            <h4>Classification Report</h4>
+            <table class="report-table">
+                <tr>
+                    <th>Class</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1-Score</th>
+                </tr>
+
+                {% for key, val in test_metrics.test_classification_report.items() %}
+                    {% if key in ['1','2','3'] %}
+                    <tr>
+                        <td>
+                            {% if key == '1' %} Iris-setosa
+                            {% elif key == '2' %} Iris-versicolor
+                            {% else %} Iris-virginica
+                            {% endif %}
+                        </td>
+                        <td>{{ "%.2f"|format(val.precision) }}</td>
+                        <td>{{ "%.2f"|format(val.recall) }}</td>
+                        <td>{{ "%.2f"|format(val['f1-score']) }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+
+        {% endif %}
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <h3>KAMMARI RAMYA</h3>
+    <p>Data Science and NLP Student</p>
+    <img src="{{ url_for('static', filename='Ramya.jpg') }}" class="profile-pic">
+</footer>
+
+</body>
+</html>
