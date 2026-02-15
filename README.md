@@ -1,154 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iris Flower Classification | Portfolio Documentation</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #f4f7fc;
-    color: #2c3e50;
-    line-height: 1.7;
-}
-
-header {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-header h2 {
-    font-weight: 300;
-}
-
-.container {
-    width: 85%;
-    margin: auto;
-    padding: 40px 0;
-}
-
-.section {
-    background: white;
-    margin-bottom: 30px;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-    transition: 0.3s ease;
-}
-
-.section:hover {
-    transform: translateY(-5px);
-}
-
-.section h2 {
-    margin-bottom: 15px;
-    color: #4b4dbf;
-    border-bottom: 2px solid #eaeaea;
-    padding-bottom: 8px;
-}
-
-.section h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-ul {
-    margin-left: 20px;
-}
-
-pre {
-    background: #f4f4f4;
-    padding: 15px;
-    border-radius: 8px;
-    overflow-x: auto;
-}
-
-code {
-    background: #eef2ff;
-    padding: 4px 8px;
-    border-radius: 5px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 60%;
-    margin-top: 10px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 8px;
-    text-align: center;
-}
-
-footer {
-    text-align: center;
-    padding: 30px;
-    background: #2c3e50;
-    color: white;
-    margin-top: 40px;
-}
-</style>
+<title>Iris Flower Classification Project</title>
 </head>
 
-<body>
+<body style="font-family: Arial, sans-serif; line-height:1.7; background-color:#f4f7fc; padding:40px; color:#2c3e50;">
 
-<header>
-    <h1>Iris Flower Classification Project</h1>
-    <h2>Using K-Nearest Neighbors & Gaussian Naive Bayes</h2>
-    <p>Comprehensive Portfolio Documentation</p>
-</header>
-
-<div class="container">
-
-<div class="section">
-<h2>1. Acknowledgements</h2>
-<p><strong>Dataset:</strong> Iris Dataset (UCI Machine Learning Repository)</p>
-<p><strong>Original Contributor:</strong> R.A. Fisher</p>
-<p><strong>Tools Used:</strong> Flask, Scikit-learn, NumPy, Pandas, Pickle, JSON, HTML, CSS, Render, GitHub</p>
+<!-- HEADER -->
+<div style="background: linear-gradient(135deg,#667eea,#764ba2); padding:40px; border-radius:12px; color:white; text-align:center;">
+<h1 style="margin:0;">Iris Flower Classification Project</h1>
+<h2 style="margin:10px 0 0 0; font-weight:300;">Using K-Nearest Neighbors and Gaussian Naive Bayes</h2>
+<p style="margin-top:15px;">Comprehensive Project Documentation</p>
 </div>
 
-<div class="section">
-<h2>2. Project Overview</h2>
-<p><strong>Objective:</strong> Build a machine learning web application that classifies iris flowers based on four input features and allows users to select between KNN and Gaussian Naive Bayes algorithms.</p>
+<br><br>
 
-<h3>Key Features:</h3>
+<!-- TABLE OF CONTENTS -->
+<div style="background:white; padding:25px; border-radius:10px;">
+<h2>Table of Contents</h2>
+<ol>
+<li>Acknowledgements</li>
+<li>Project Overview</li>
+<li>Dataset Description</li>
+<li>Project Structure</li>
+<li>Technology Stack</li>
+<li>Implementation Steps</li>
+<li>Code Explanation</li>
+<li>Model Development</li>
+<li>Deployment Process</li>
+<li>Results and Output</li>
+<li>Challenges and Solutions</li>
+<li>Future Enhancements</li>
+<li>Conclusion</li>
+<li>References</li>
+</ol>
+</div>
+
+<br>
+
+<!-- 1 -->
+<div style="background:white; padding:25px; border-radius:10px;">
+<h2>1. Acknowledgements</h2>
+
+<p><strong>Dataset Name:</strong> Iris Dataset</p>
+<p><strong>Source:</strong> UCI Machine Learning Repository</p>
+<p><strong>Original Contributor:</strong> R.A. Fisher</p>
+
+<p><strong>Tools Used:</strong><br>
+Flask, Scikit-learn, NumPy, Pandas, Pickle, JSON, HTML, CSS, Render, GitHub
+</p>
+
+<p>Special thanks to open-source contributors and deployment platform Render.</p>
+</div>
+
+<br>
+
+<!-- 2 -->
+<div style="background:white; padding:25px; border-radius:10px;">
+<h2>2. Project Overview</h2>
+
+<p><strong>Objective:</strong><br>
+Develop a machine learning web application that classifies iris flowers based on four input features and allows the user to choose between two algorithms: K-Nearest Neighbors (KNN) and Gaussian Naive Bayes (NVB).
+</p>
+
+<p><strong>Key Features:</strong></p>
 <ul>
-<li>Dual algorithm selection (Two submit buttons)</li>
+<li>Dual algorithm selection using two submit buttons</li>
 <li>Real-time prediction</li>
-<li>Train & Test metrics display</li>
-<li>Confusion Matrix as aligned table</li>
-<li>Classification report in structured format</li>
-<li>Metrics loaded dynamically from JSON</li>
+<li>Separate Train and Test metrics display</li>
+<li>Confusion matrix displayed as aligned matrix</li>
+<li>Classification report displayed as table</li>
+<li>Metrics loaded dynamically from JSON files</li>
 <li>Deployment-ready Flask application</li>
 </ul>
 </div>
 
-<div class="section">
-<h2>3. Dataset Description</h2>
-<p><strong>Total Records:</strong> 150</p>
-<p><strong>Features:</strong> 4 Numerical Features</p>
-<p><strong>Target Classes:</strong> 3 Species</p>
+<br>
 
-<h3>Input Features:</h3>
+<!-- 3 -->
+<div style="background:white; padding:25px; border-radius:10px;">
+<h2>3. Dataset Description</h2>
+
+<p><strong>Total Records:</strong> 150</p>
+<p><strong>Features:</strong> 4 numerical features</p>
+<p><strong>Target Classes:</strong> 3 species</p>
+
+<p><strong>Input Features:</strong></p>
 <ul>
 <li>Sepal Length (cm)</li>
 <li>Sepal Width (cm)</li>
@@ -156,17 +94,28 @@ footer {
 <li>Petal Width (cm)</li>
 </ul>
 
-<h3>Preprocessing:</h3>
+<p><strong>Target Variable:</strong></p>
+<ul>
+<li>Iris-setosa</li>
+<li>Iris-versicolor</li>
+<li>Iris-virginica</li>
+</ul>
+
+<p><strong>Preprocessing Steps:</strong></p>
 <ul>
 <li>Dropped 'Id' column</li>
-<li>Encoded species to numeric (1,2,3)</li>
-<li>80% Training / 20% Testing split</li>
+<li>Converted species names to numeric mapping (1,2,3)</li>
+<li>Split dataset into training (80%) and testing (20%)</li>
 </ul>
 </div>
 
-<div class="section">
+<br>
+
+<!-- 4 -->
+<div style="background:white; padding:25px; border-radius:10px;">
 <h2>4. Project Structure</h2>
-<pre>
+
+<pre style="background:#f4f4f4; padding:15px; border-radius:8px;">
 Classification_knn_nvb/
 │
 ├── app.py
@@ -184,10 +133,13 @@ Classification_knn_nvb/
 </pre>
 </div>
 
-<div class="section">
+<br>
+
+<!-- 5 -->
+<div style="background:white; padding:25px; border-radius:10px;">
 <h2>5. Technology Stack</h2>
 
-<h3>Backend:</h3>
+<h3>Backend</h3>
 <ul>
 <li>Python</li>
 <li>Flask</li>
@@ -198,13 +150,13 @@ Classification_knn_nvb/
 <li>JSON</li>
 </ul>
 
-<h3>Frontend:</h3>
+<h3>Frontend</h3>
 <ul>
 <li>HTML5</li>
 <li>CSS3</li>
 </ul>
 
-<h3>Deployment:</h3>
+<h3>Deployment</h3>
 <ul>
 <li>Git</li>
 <li>GitHub</li>
@@ -213,49 +165,56 @@ Classification_knn_nvb/
 </ul>
 </div>
 
-<div class="section">
+<br>
+
+<!-- 6 -->
+<div style="background:white; padding:25px; border-radius:10px;">
 <h2>6. Implementation Steps</h2>
 
-<h3>Environment Setup</h3>
-<code>python -m venv venv</code><br><br>
-<code>venv\Scripts\activate</code><br><br>
+<h3>Step 1: Environment Setup</h3>
+<code>python -m venv venv</code><br>
+<code>venv\Scripts\activate</code><br>
 <code>pip install flask numpy pandas scikit-learn gunicorn</code>
 
-<h3>Model Training</h3>
+<h3>Step 2: Model Training</h3>
 <ul>
-<li>Load dataset</li>
-<li>Preprocess & Encode</li>
+<li>Load dataset using Pandas</li>
+<li>Preprocess data and encode species</li>
+<li>Split data using train_test_split</li>
 <li>Train KNN (n_neighbors=3)</li>
-<li>Train GaussianNB</li>
-<li>Evaluate using Accuracy, Confusion Matrix, Classification Report</li>
+<li>Train Gaussian Naive Bayes</li>
+<li>Evaluate using accuracy, confusion matrix, classification report</li>
 <li>Save models (.pkl)</li>
 <li>Save metrics (.json)</li>
 </ul>
 
-<h3>Deployment</h3>
+<h3>Step 3: Deployment</h3>
 <ul>
-<li>Push to GitHub</li>
-<li>Connect to Render</li>
-<li>Build: <code>pip install -r requirements.txt</code></li>
-<li>Start: <code>gunicorn app:app</code></li>
+<li>Push project to GitHub</li>
+<li>Connect repository to Render</li>
+<li>Build Command: pip install -r requirements.txt</li>
+<li>Start Command: gunicorn app:app</li>
 </ul>
 </div>
 
-<div class="section">
+<br>
+
+<!-- 7 -->
+<div style="background:white; padding:25px; border-radius:10px;">
 <h2>7. Model Development</h2>
 
 <h3>K-Nearest Neighbors</h3>
 <ul>
-<li>Distance-based classifier</li>
+<li>Distance-based algorithm</li>
 <li>n_neighbors = 3</li>
-<li>Suitable for small structured datasets</li>
+<li>Effective for small structured datasets</li>
 </ul>
 
 <h3>Gaussian Naive Bayes</h3>
 <ul>
 <li>Probabilistic classifier</li>
 <li>Assumes conditional independence</li>
-<li>Fast & computationally efficient</li>
+<li>Fast and efficient</li>
 </ul>
 
 <h3>Evaluation Metrics</h3>
@@ -268,8 +227,11 @@ Classification_knn_nvb/
 </ul>
 </div>
 
-<div class="section">
-<h2>8. Results & Output</h2>
+<br>
+
+<!-- 8 -->
+<div style="background:white; padding:25px; border-radius:10px;">
+<h2>8. Results and Output</h2>
 
 <p><strong>Sample Input:</strong></p>
 <ul>
@@ -279,44 +241,55 @@ Classification_knn_nvb/
 <li>Petal Width: 0.5</li>
 </ul>
 
-<p><strong>Predicted Output:</strong> Iris-setosa</p>
-
+<p><strong>Output:</strong> Iris-setosa</p>
 </div>
 
-<div class="section">
-<h2>9. Challenges & Solutions</h2>
+<br>
+
+<!-- 9 -->
+<div style="background:white; padding:25px; border-radius:10px;">
+<h2>9. Challenges and Solutions</h2>
 <ul>
 <li>JSON serialization error → Converted numpy arrays to lists</li>
 <li>Matrix alignment issue → Used HTML tables</li>
-<li>Algorithm detection issue → Used named submit buttons</li>
-<li>Deployment path issue → Used relative paths</li>
+<li>Algorithm detection → Used named submit buttons</li>
+<li>Deployment path issues → Used relative paths</li>
 </ul>
 </div>
 
-<div class="section">
+<br>
+
+<!-- 10 -->
+<div style="background:white; padding:25px; border-radius:10px;">
 <h2>10. Future Enhancements</h2>
 <ul>
 <li>Add heatmap visualization</li>
 <li>Add accuracy comparison graph</li>
 <li>Improve UI responsiveness</li>
-<li>Store prediction history</li>
-<li>Create REST API endpoints</li>
+<li>Add prediction history storage</li>
+<li>Implement API endpoints</li>
 </ul>
 </div>
 
-<div class="section">
+<br>
+
+<!-- 11 -->
+<div style="background:white; padding:25px; border-radius:10px;">
 <h2>11. Conclusion</h2>
-<p>This project demonstrates a complete ML deployment pipeline integrating:</p>
+<p>This project demonstrates a complete machine learning deployment pipeline integrating:</p>
 <ul>
 <li>Dual algorithm model training</li>
-<li>JSON metric storage</li>
-<li>Flask backend</li>
-<li>HTML/CSS frontend</li>
+<li>JSON-based metric storage</li>
+<li>Flask backend development</li>
+<li>HTML/CSS frontend integration</li>
 <li>Cloud deployment using Render</li>
 </ul>
 </div>
 
-<div class="section">
+<br>
+
+<!-- 12 -->
+<div style="background:white; padding:25px; border-radius:10px;">
 <h2>12. References</h2>
 <ul>
 <li>Flask Documentation</li>
@@ -326,12 +299,13 @@ Classification_knn_nvb/
 </ul>
 </div>
 
-</div>
+<br><br>
 
-<footer>
-    <h2>KAMMARI RAMYA</h2>
-    <p>Data Science & NLP Student</p>
-</footer>
+<div style="text-align:center;">
+<h2>KAMMARI RAMYA</h2>
+<p>Data Science and NLP Student</p>
+</div>
 
 </body>
 </html>
+
